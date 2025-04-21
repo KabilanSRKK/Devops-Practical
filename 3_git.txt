@@ -1,0 +1,74 @@
+ GIT INSTALLATION AND CONFIGURATION WITH GITHUB 
+
+ AIM: 
+ To install Git version control system and configure with GitHub. 
+
+ PROCEDURE: 
+
+ Step 1:  Go to Git Official Website:  https://git-scm.com/downloads/win  . 
+
+ Step 2:  Run the setup and install Git.After installation  check the installation in command 
+ prompt. 
+ 
+ Step 3:  Install Git Extension Pack for Visual Studio  Code. 
+
+ Step 4:  To initialize a new Git repository, navigate  to the project directory and run the command 
+ "git init". 
+
+ Set the git configuration using the below commands 
+ git config --global --user.name "username" 
+ git config --global --user.Email "email" 
+ 
+Set the configuration using the command  “git config --global --list” 
+
+Step 5:  Run basic git commands to create and commit  a new file. 
+
+Basic git Commands 
+⇒ git add "file name" 
+⇒ git add . 
+The git add command is used in Git to add changes or files to the staging area. 
+This staging area is where you prepare your changes before committing them to the 
+repository. 
+
+⇒ git commit -m "msg" 
+Once your changes are staged, you can commit them to the Git repository using 
+git commit. 
+
+⇒ git status 
+Shows the current state of the working directory and staging area, indicating 
+changes tracked, untracked, or staged for commit. 
+
+ ⇒ git log 
+ to view the commit history of a repository. It displays a list of commits along with 
+ their commit messages, author details, commit dates, and commit hashes. 
+
+ Step 6:  Log into github and create a new repository. 
+
+ Step 7:  Run the commands to configure with github. 
+
+ ●  git remote add origin "URL" – Adds a remote repository with the given URL and names it 
+ origin. 
+ 
+Step 8:  Run the commands to creating and switching  between branches. 
+
+●  git branch -m main – Renames the current branch to main. 
+●  git push origin "branch name" – to push changes to the remote branch. 
+●  git checkout -b "new branch name" – Creates and switches to a new branch. 
+●  git switch -c "new branch name" – Creates and switches to a new branch 
+(alternative to checkout). 
+●  git checkout/switch "branch name" – Switches to an existing branch. 
+●  git pull origin "branch name" – Fetches and merges changes from the remote 
+branch into the local branch. 
+●  git merge "source branch name" – Merges the specified branch into the current 
+branch. 
+ 
+Step 9:  Run the commands to create tags. 
+
+●  git tag "tag name" – Creates a lightweight tag at the current commit. 
+●  git tag -a "tag name" -m "message" – Creates an annotated tag with a message. 
+●  git push origin tag name – Pushes a tag to the remote repository. 
+
+Step 10:  Cross check the changes in github. 
+
+ RESULT: 
+ Thus we successfully installed Git version control system and configured it with GitHub.

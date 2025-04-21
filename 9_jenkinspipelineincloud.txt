@@ -1,0 +1,72 @@
+JENKINS PIPELINE IN CLOUD
+
+AIM: 
+To install Jenkins in cloud and create CI/CD pipeline and deploy in cloud. 
+
+PROCEDURE: 
+
+Step 1:  To launch a virtual machine (VM) instance on Microsoft Azure, follow these steps: 
+⇒Sign in to the Azure portal: Go to  https://portal.azure.com  and sign in with your Azure 
+account. 
+⇒Create a new virtual machine: 
+⇒In the Azure portal’s left-hand menu, click on “Create a resource”. 
+⇒In the search box, type “Virtual Machine” and press Enter. 
+⇒Select “Virtual machine” from the search results. 
+
+Step 2:  Connect to the VM using SSH and Azure CLI and install Jenkins. 
+
+Pre-Requisites: Java (JDK) 
+
+Run the following commands to install Java and Jenkins :
+
+Install Java :
+sudo apt update 
+sudo apt install openjdk-17-jre 
+
+Install Jenkins :
+curl -fsSL  https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee 
+/usr/share/keyrings/jenkins-keyring.asc > /dev/null 
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] 
+https://pkg.jenkins.io/debian binary/ | sudo tee 
+/etc/apt/sources.list.d/jenkins.list > /dev/null 
+sudo apt-get update 
+sudo apt-get install Jenkins 
+
+By default, Jenkins will not be accessible to the external world due to Azure's inbound 
+traffic restriction. Open port 8080 in the inbound traffic rules, as shown below. 
+●  Add inbound security rule 
+●  Add inbound traffic rules as shown in the image (you can just allow 8080 as well; in 
+my case, I allowed all traffic). 
+
+Step 3:  Log in to Jenkins using the URL below and configure Jenkins 
+●  Open the browser and go to  http:/<<vm-public-ip>>:8080 
+●  Unlock Jenkins: sudo cat /var/lib/jenkins/secrets/initialAdminPassword 
+●  Paste the password into the browser UI 
+●  Select Install Suggested Plugins 
+●  Create a username and password 
+●  Sign in using the credentials created 
+
+ Step 4: Install Required Plugins 
+ ●  Go to Manage Jenkins → Plugins 
+ ●  Under Available Plugins, install Pipeline, Git, Maven Integration, (optional: HTML 
+ Publisher, Build Pipeline View, etc) 
+
+Step 5: Create a freestyle project 
+●  Jenkins Dashboard → New Item 
+●  Enter name 
+●  Choose Freestyle Project → Click OK 
+●  In Source Code Management: Select Git, enter repository URL, and choose branch 
+●  In Build Section: add a build step → Invoke top-level Maven targets and add goals 
+●  Click Save and Build Now to test it 
+
+Step 6: Create a Pipeline project 
+●  Jenkins Dashboard → New Item 
+●  Enter name 
+●  Select Pipeline → Click OK 
+●  Add Pipeline script 
+●  Click Save and Build Now 
+●  Click the build number and click Console Output 
+
+ RESULT : 
+ Thus,  the  installation  of  Jenkins,  the  creation  of  pipeline,  and  deploying  it  in  cloud  has  been  done 
+ successfully.

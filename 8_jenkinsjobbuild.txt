@@ -1,0 +1,41 @@
+ INSTALLATION AND CONFIGURATION OF JENKINS AND CREATING A WORKSPACE 
+
+ AIM: 
+ To install and configure Jenkins and create a workspace. 
+
+ PROCEDURE: 
+ 
+Step 1:  Go to Jenkins' official website and download the Generic Java Package (.war) under LTS: 
+ https://www.jenkins.io/download/ 
+ 
+Step 2:  Go to the directory where Jenkins is installed and run the jar file using the command: 
+ java -jar jenkins.war 
+
+ Step 3:  Unlock Jenkins by entering the Administrator password from the location given in the page. 
+ 
+ Step 4:  Click “Install suggested plugins” and create a user 
+
+Step 5: Create a new job 
+●  Click “New Item” 
+●  Enter a job name 
+●  Select “Freestyle Project” 
+●  Click “OK” 
+
+Step 6: Configure the job 
+●  Add a description(optional) 
+●  Source code management: Choose Git and link a git repository 
+●  Build Triggers (optional) 
+●  Build Steps: 
+Add a build step: “Invoke top-level maven target” and write a basic maven command like: 
+clean install -DskipTests 
+●  Post Build Actions: Add a HTML Publisher or anything else (optional) 
+
+Step 7: Save and Build 
+●  Click “Save”. You can see the Workspace created on the job’s page 
+●  On the job’s page, click “Build Now” 
+●  After the build appears in the build history, click the build number 
+●  Click “Console Output” to see your script’s output 
+
+RESULT : 
+Thus,  the  installation  and  configuration  of  Jenkins  and  the  creation  of  workspace  has  been  done 
+successfully.

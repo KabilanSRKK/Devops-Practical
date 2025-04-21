@@ -1,0 +1,81 @@
+GRADLE
+
+AIM: 
+To install and build using Gradle. 
+
+PROCEDURE: 
+Step 1:  Go to the Gradle official website:  https://gradle.org/install/ 
+
+Step 2:  Download the latest version of Gradle from the "Download the latest version" 
+section. 
+Choose the "Complete" distribution ZIP file. 
+
+Step 3:  Once the download is complete, navigate to the directory where the ZIP file was 
+downloaded. 
+
+Step 4:  Set gradle environment variables. 
+
+Step 5:  Verify installation in command prompt. 
+
+Step 6:  Initialize a Gradle project. 
+
+To initialize a Gradle project: 
+1. Open Terminal or Command Prompt: Navigate to the directory where you want 
+to create your Gradle project. 
+
+2. Run “gradle init” Command 
+
+3. Choose Project Type: Gradle will prompt you to choose a type for your project: 
+• Select application if you are creating a Java application. 
+• Select library if you are creating a Java library. 
+• Select groovy-library if you are creating a Groovy library. 
+• Select scala-library if you are creating a Scala library. 
+
+4. Provide Project Name: Enter a name for your project. 
+
+5. Configure Project: Gradle will ask you if you want to customize the project 
+configuration. 
+You can choose to customize the configuration or go with the default options. 
+
+6. Build Your Project: After completing the configuration, Gradle will generate the 
+necessary 
+files and directories for your project. 
+ 
+7. Open in IDE: If you want to open the project in an Integrated Development 
+Environment, you can import it using the appropriate option in your IDE. 
+
+Step 7:  Run the gradle project. 
+
+To run a Gradle project, use the “gradle run” command 
+
+1. To create a JAR file using Gradle, you should configure your build.gradle file with 
+the necessary tasks and settings. 
+
+2. Open your project's build.gradle file in a text editor or an Integrated Development 
+Environment (IDE) that supports Gradle. 
+
+3. Apply Java Plugin: Ensure that your build.gradle file applies the Java plugin. If 
+it's not already applied, add the following line at the top of your build.gradle file: 
+
+plugins 
+{ 
+id 'java' 
+} 
+
+ 4. Define Jar Task: Add a task to create the JAR file. You can customize this task 
+ based on your project's structure and requirements. Here's an example: 
+
+ task createJar(type: Jar) 
+ { 
+ from sourceSets.main.output 
+ archiveFileName = "my-project.jar" 
+ } 
+
+ 5. You can now run the createJar task using Gradle using the command "  gradle 
+ createJar  " 
+
+ 6. Find the JAR File: After running the task, the JAR file will be generated in the 
+ build/libs directory of your project. You can use this JAR file as needed. 
+
+ RESULT: 
+ Thus we successfully installed and built using Gradle.

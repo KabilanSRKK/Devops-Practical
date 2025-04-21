@@ -1,0 +1,81 @@
+MAVEN PIPELINE IN AZURE
+
+AIM: 
+To create a maven build pipeline in azure. 
+
+PROCEDURE: 
+
+Step 1:  Go to Azure DevOps and create an organization. 
+
+Step 2:  Create a new one by clicking on "New project"  on the Azure DevOps dashboard. 
+
+Step 3:  Navigate to Pipelines > Pipelines in the Azure  DevOps dashboard.Click on "New pipeline" to 
+create a new pipeline. 
+ 
+ Step 4:  Configure Azure DevOps CI pipeline: 
+ • Use “New pipeline” in “Pipelines -> Builds” in Azure DevOps project. 
+ • Connect to GitHub and select your repo. You may want to install Azure DevOps GitHub app 
+ and grant access to your GitHub repo. 
+ • Select “Maven” in “Configure your pipeline” step. 
+ • Create new pipeline and push azure-pipelines.yml to your repo to keep it align with the 
+ source code and run build. 
+ • As the result you will get: 
+ 1. CI pipeline configued in Azure DevOps 
+ 2. azure-pipelines.yml config in your repo 
+ 
+Step 5:  Once configured the pipeline, save the changes  to the YAML file.Optionally, you can run a 
+manual build to test the pipeline's functionality and verify that the Maven build process executes 
+successfully. 
+
+Step 6:  After the pipeline runs, review the build results,  logs, and any errors or warnings.Azure 
+DevOps provides detailed reports and insights into the build process, including test results if you've 
+configured testing tasks in your pipeline. 
+
+Add Additional Tasks (Optional): 
+Depending on your project's requirements, add additional tasks to the pipeline, such 
+as deploying artifacts to Azure services, running integration tests, or generating build 
+artifacts. 
+
+Configure Deployment (Optional): 
+If the pipeline includes deployment tasks, configure the deployment targets and 
+settings accordingly. Deploy Maven artifacts to Azure App Service, Azure Kubernetes 
+Service (AKS), Azure Functions, or any other Azure resources. 
+
+Steps to create a self hosted agent: 
+
+Step 1:  Open your web browser and log in to your Azure  DevOps account. 
+
+Step 2:  Navigate to your Azure DevOps project and  click on Project settings on the left side of the 
+page. 
+
+Step 3:  Click on Agent Pools under Pipelines and click  on Add pool. 
+
+Step 4:  Select Pool-type as Self-hosted, give it a  name, grant access to all pipellines and click 
+on Create. 
+ 
+Step 5:  Click on the created agent → Click on New  agent. It will show the below screen. Just follow 
+the steps to create the agent. Click on the Download button to download the agent. 
+
+Step 6:  Extract the downloaded agent package to a  directory on your system. 
+ 
+ Step 7:  Run the configuration script. The configuration  script will prompt for your Azure Organization 
+ account URL and a personal access token (PAT). 
+
+ Step 8:  To generate a PAT, go to Azure DevOps account,  click on the small icon on the left side of the 
+ profile picture in the top-right corner, and select Personal access tokens from the dropdown menu 
+ and Generate a new token with appropriate permissions for the agent. 
+ 
+Step 9:  Run the configuration file “config.cmd”. Enter  the Organization URL, PAT created in the 
+previous step, Agent pool name created in step 4 and enter a new name for the agent or press enter 
+for taking the system name as default. 
+
+Step 10:  Execute “run.cmd” to run the agent. 
+
+Step 11:  After completing the configuration, the agent  will register itself with the specified agent pool 
+in Azure DevOps. Now, go back to agent pool → Select the created Agent Pool (DocuMergePool), 
+you will see the agent (DocuMergeAgent) online. 
+ 
+Step 12:  Now use the self-hosted agent in the pipeline 
+
+RESULT : 
+Thus, the creation of the Maven build pipeline in Azure has been done successfully. 

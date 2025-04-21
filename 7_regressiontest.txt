@@ -1,0 +1,91 @@
+
+RUN REGRESSION TEST USING MAVEN BUILD PIPELINE IN AZURE 
+  
+AIM: 
+To  run  regression  tests  for  the  Speech  Transcription  App  using  a  Maven  build  pipeline  in  Azure 
+DevOps. 
+
+PROCEDURE: 
+
+Step 1:  Create an Azure DevOps Pipeline. 
+You need a YAML-based pipeline in Azure DevOps. 
+⇒  Go to the  Azure DevOps Portal  . 
+⇒Navigate to your  Project  → Click on  Pipelines  → Select  New Pipeline  . 
+⇒Choose your source repository (Azure Repos, GitHub, Bitbucket, etc.). 
+⇒Select  "Pipeline Type"  and edit the  azure-pipelines.yml  file. 
+
+Step 2:  Define Your  azure-pipelines.yml  File 
+Modify the pipeline YAML to include Maven build and regression tests. 
+
+Step 3:  Configure Your  pom.xml  for Regression Testing 
+Ensure your  pom.xml  includes a test framework like  JUnit or TestNG  and the necessary 
+dependencies. 
+
+JUnit Example in  pom.xml: 
+<dependencies> 
+<!-- JUnit Jupiter (JUnit 5) → 
+<dependency> 
+<groupId>org.junit.jupiter</groupId> 
+<artifactId>junit-jupiter-api</artifactId> 
+<version>5.10.0</version> 
+<scope>test</scope> 
+</dependency> 
+<dependency> 
+<groupId>org.junit.jupiter</groupId> 
+<artifactId>junit-jupiter-engine</artifactId> 
+<version>5.10.0</version> <!-- You can replace this with the latest version --> 
+<scope>test</scope> 
+</dependency> 
+<dependency> 
+<groupId>junit</groupId> 
+<artifactId>junit</artifactId> 
+<version>4.13.2</version> <!-- You can replace this with the latest version --> 
+<scope>test</scope> 
+</dependency> 
+<build> 
+<plugins> 
+<plugin> 
+<groupId>org.apache.maven.plugins</groupId> 
+<artifactId>maven-surefire-plugin</artifactId> 
+<version>3.1.2</version> 
+</plugin> 
+</plugins> 
+</build> 
+
+Step 4:  Commit and Push the YAML 
+Save and commit the  azure-pipelines.yml  file to your repository. This will trigger the pipeline 
+execution. 
+
+Step 5:  Monitor Pipeline Execution 
+1.  Navigate to  Azure DevOps  →  Pipelines  . 
+2.  Select your pipeline run to check the status. 
+3.  View logs and ensure regression tests pass. 
+
+Sample code JUnit Test Case: 
+TranscriptionControllerTest.java: 
+package com.example.meetscribe; 
+import org.junit.jupiter.api.Test; 
+import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc; 
+import org.springframework.boot.test.context.SpringBootTest; 
+import org.springframework.test.web.servlet.MockMvc; 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get; 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status; 
+@SpringBootTest 
+@AutoConfigureMockMvc 
+public class TranscriptionControllerTest { 
+@Autowired 
+private MockMvc mockMvc; 
+@Test 
+public void successCase_startEndpointShouldReturnOK() throws Exception { 
+mockMvc.perform(get("/start")) 
+.andExpect(status().isOk()); //  Expected to pass 
+} 
+@Test 
+public void failureCase_invalidEndpointShouldReturn404() throws Exception { 
+mockMvc.perform(get("/invalid-endpoint")) 
+.andExpect(status().isNotFound()); // Expected to fail (simulate a regression)}}
+
+RESULT : 
+Thus,  the  regression  tests  for  the  Speech  Transcription  App  using  a  Maven  build  pipeline  in  Azure 
+DevOps has been run successfully. 

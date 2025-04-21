@@ -1,0 +1,29 @@
+MAVEN
+
+AIM: 
+To install and build using Maven. 
+
+PROCEDURE: 
+
+Step 1:  Go to the Apache Maven official website:  https://maven.apache.org/download.cgi 
+
+Step 2:  Under "Files," download the latest version  of Apache Maven bin in ZIP format. 
+
+Step 3:  Once the download is complete, navigate to  the directory where the ZIP file was 
+downloaded.Click on the ZIP file,select the location and select "Extract" to extract its contents. 
+ 
+ Step 4:  Set maven environment variables. 
+
+ Step 5:  Verify installation in command prompt. 
+
+ Step 6:  Navigate to the project directory where pom.xml  is located and run the maven build 
+ commands. 
+
+ ⇒  mvn compile 
+ ⇒ mvn install 
+
+ Step 7:  After the build is successful the jar package is created for the project under target 
+ directory. 
+
+ RESULT: 
+ Thus we successfully installed and built using Maven.
