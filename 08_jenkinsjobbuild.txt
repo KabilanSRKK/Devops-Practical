@@ -21,6 +21,9 @@ Step 5: Create a new job
 ●  Select “Freestyle Project” 
 ●  Click “OK” 
 
+Install plugins in plugin tab
+Copy Artifact, HTML Publisher, and Build Pipeline View.
+
 Step 6: Configure the job 
 ●  Add a description(optional) 
 ●  Source code management: Choose Git and link a git repository 
